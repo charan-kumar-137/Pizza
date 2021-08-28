@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<!-- Bootstrap CSS -->
+	<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" >
+
+	<title>Pizza</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav class="navbar navbar-light bg-light">
+		<div class="container-fluid">
+			<span class="navbar-brand mb-0 h1">Pizza</span>
+		</div>
+	</nav>
+
+	<div class="container my-3 px-3">
+		<label for="action" class="form-label">Action</label>
+		<select class="form-select mb-3" id="action" onchange="renderForm()">
+			<option value="CREATE">Create</option>
+			<option value="GET">Get</option>
+			<option value="LIST">List</option>
+			<option value="EDIT">Edit</option>
+			<option value="DELETE">Delete</option>
+		</select>
+
+		<label for="method" class="form-label">Method</label>
+		<select class="form-select mb-3" id="method" onchange="renderForm()">
+			<option value="GET">GET</option>
+			<option value="POST">POST</option>
+			<option value="PUT">PUT</option>
+			<option value="DELETE">DELETE</option>
+		</select>
+
+		<div id="idInput" hidden>
+			<label for="id" class="form-label">Id</label>
+			<input type="number" class="form-control" id="id">
+		</div>
+
+		<div id="nameInput">
+			<label for="name" class="form-label">Name</label>
+			<input type="text" class="form-control" id="name">
+
+		</div>
+
+		<div id="typeInput">
+			<label for="type" class="form-label">Type</label>
+			<input type="text" class="form-control" id="type">
+		</div>
+
+		<div id="sizeInput">
+			<label for="size" class="form-label">Size</label>
+			<input type="text" class="form-control" id="size">
+		</div>
+
+		<div id="toppingsInput">
+			<label for="toppings" class="form-label">Toppings</label>
+			<input type="text" class="form-control" id="toppings">
+		</div>
+
+		<button type="button" class="btn btn-primary my-3" id="submit">Submit</button>
+
+	</div>
+
+	<div class="container bg-light my-3 px-3">
+		<code id="response">
+
+		</code>
+	</div>
+
+	<script src="{% static 'script.js' %}"></script>
+
+	<script src="{% static 'bootstrap.bundle.min.js' %}"" ></script>
+</body>
+
+</html>
